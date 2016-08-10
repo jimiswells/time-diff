@@ -1,0 +1,13 @@
+body {
+    height: 100vh;
+    background-color: #fff;
+    padding: 50px;
+}
+
+#steps-fivepercent-slider .ui-slider-tip {
+    visibility: visible;
+    opacity: 1;
+    top: -30px;
+}
+
+@import '_typography'

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html style="background: #F5F5F5">
+  <head>
+    <meta charset="UTF-8">
+    <title>TimeDiff</title>
+    <LINK REL=StyleSheet HREF="/assets/css/normalize.css" TYPE="text/css" MEDIA=screen>
+    <LINK REL=StyleSheet HREF="/assets/css/main.css" TYPE="text/css" MEDIA=screen>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="assets/js/jquery-ui-slider-pips.js"></script>
+  </head>
+  <body>
+    <h1>TimeDiff</h1>
+    Keep on scrollin'
+    
+    <div class="slider"></div>
+
+  </body>
+
+  <script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+  </script>
+  <script>
+        $(".slider")
+                        
+    .slider({ 
+        min: 0, 
+        max: 1000, 
+        range: true, 
+        values: [200, 800] 
+    })
+                        
+    .slider("pips", {
+        rest: "label"
+    })
+                        
+    .slider("float");</script>
+
+</html>
