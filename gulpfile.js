@@ -22,7 +22,8 @@ gulp.task('sass', function() {
     return gulp.src("/Users/jimiswells/Desktop/WEB/time-diff/assets/scss/*.scss")
         .pipe(sass())
         .pipe(gulp.dest("/Users/jimiswells/Desktop/WEB/time-diff/assets/css"))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.stream())
+        .on('change', browserSync.reload);
 });
 
 gulp.task('default', ['serve']);
