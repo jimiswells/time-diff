@@ -5,11 +5,15 @@
     <title>TimeDiff</title>
     <LINK REL=StyleSheet HREF="/assets/css/normalize.css" TYPE="text/css" MEDIA=screen>
     <LINK REL=StyleSheet HREF="/assets/css/main.css" TYPE="text/css" MEDIA=screen>
+     <LINK REL=StyleSheet HREF="/assets/css/ion.rangeSlider.skinModern.css" TYPE="text/css" MEDIA=screen>
+    <LINK REL=StyleSheet HREF="/assets/css/ion.rangeSlider.css" TYPE="text/css" MEDIA=screen>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    
   
     <script src="assets/js/jquery-ui-slider-pips.js"></script>
-     <script src="assets/js/moment-with-locales.min.js"></script>
+     <script src="/assets/js/moment-with-locales.min.js"></script>
+     <script src="assets/js/ion.rangeSlider.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
   </head>
   <body>
@@ -23,7 +27,12 @@
   <option value="Paris">Paris</option>
   <option value="Bilbao">Bilbaos</option>
   <option value="Tokyo">Tokyo</option>
-</select><div class="slider"></div><button class="remove">X</button></div>
+</select>
+   
+   
+   
+<button class="remove">X</button></div>
+       </div>
 
     
        
@@ -35,25 +44,29 @@
 </select><div class="slider"></div><button class="remove">X</button></div>
    
    
-  UTC<br/>
+  <!--UTC<br/>
 <div id="divUTC"></div><br/>
 Your Local Time with respect to above UTC time<br/>
 <div id="divLocal">
-</div>    
+</div> -->   
     
        
  
     
 
  </section>
+ 
+
+ 
  <button class="add-row">+</button>
+ <input type="text" id="example_id" name="example_name" value="" />
   </body>
 
   <!--<script>
     // You can also require other files to run in this process
     require('./renderer.js')
   </script>-->
-  <script>
+  <!--<script>
        $(".slider")
                         
 .slider({ 
@@ -68,7 +81,25 @@ Your Local Time with respect to above UTC time<br/>
 })
                         
 .slider("float");</script>
+  -->
 
   <script src="assets/js/app.js"></script>
+  
+  <script>
+      
+     
+$("#example_id").ionRangeSlider({
+    min: +moment().subtract(12, "hours").format("X"),
+    max: +moment().format("X"),
+    from: +moment().subtract(6, "hours").format("X"),
+    grid: true,
+    force_edges: true,
+    prettify: function (num) {
+        var m = moment(num, "X").locale("LTS");
+        return m.format("Do MMMM, HH:mm");
+    }
+});
+      
+      </script>
 
 </html>

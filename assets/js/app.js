@@ -1,6 +1,7 @@
     
 
 $('.add-row').click(function () {
+       
         var zoneSliderRow = $('.slider-row').html();
         var deleteButton = $('.remove');
         $('.content').append("<div class='slider-row'>" + zoneSliderRow + "</div>");
