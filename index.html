@@ -7,37 +7,68 @@
     <LINK REL=StyleSheet HREF="/assets/css/main.css" TYPE="text/css" MEDIA=screen>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  
     <script src="assets/js/jquery-ui-slider-pips.js"></script>
+     <script src="assets/js/moment-with-locales.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
   </head>
   <body>
-    <h1>TimeDiff</h1>
-    Keep on scrollin'
+   
+   <section class="content">
+    <h1 class="title">TimeDiff</h1>
     
-    <div class="slider"></div>
+  
+    <div class="slider-row"><select>
+  <option value="New York">New York</option>
+  <option value="Paris">Paris</option>
+  <option value="Bilbao">Bilbaos</option>
+  <option value="Tokyo">Tokyo</option>
+</select><div class="slider"></div><button class="remove">X</button></div>
+
     
+       
+     <div class="slider-row"><select>
+  <option value="New York">New York</option>
+  <option value="Paris">Paris</option>
+  <option value="Bilbao">Bilbaos</option>
+  <option value="Tokyo">Tokyo</option>
+</select><div class="slider"></div><button class="remove">X</button></div>
+   
+   
+  UTC<br/>
+<div id="divUTC"></div><br/>
+Your Local Time with respect to above UTC time<br/>
+<div id="divLocal">
+</div>    
+    
+       
+ 
     
 
+ </section>
+ <button class="add-row">+</button>
   </body>
 
-  <script>
+  <!--<script>
     // You can also require other files to run in this process
     require('./renderer.js')
-  </script>
+  </script>-->
   <script>
-        $(".slider")
+       $(".slider")
                         
-    .slider({ 
-        min: 0, 
-        max: 1000, 
-        range: true, 
-        values: [200, 800] 
-    })
+.slider({ 
+    min: 0, 
+    max: 1000, 
+    step:10 
+})
                         
-    .slider("pips", {
-        rest: "label"
-    })
+.slider("pips", {
+    rest: "label",
+    step: 2
+})
                         
-    .slider("float");</script>
+.slider("float");</script>
+
+  <script src="assets/js/app.js"></script>
 
 </html>

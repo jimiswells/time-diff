@@ -1,19 +1,80 @@
+:focus {
+  outline: none; }
+
 body {
   height: 100vh;
-  background-color: #fff;
-  padding: 50px; }
+  background-color: #f5f5f5;
+  padding: 80px 3%; }
 
-
+#steps-fivepercent-slider .ui-slider-tip {
+  visibility: visible;
+  opacity: 1;
+  top: -30px; }
 
 h1 {
   margin: 0; }
 
+h1.title {
+  margin-bottom: 50px; }
 
+.slider-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px; }
+
+.slider-mock {
+  width: 100px;
+  background-color: #000; }
+
+.remove {
+  width: 100px; }
 
 .slider {
-    margin-top: 50px;
-}
+  width: 70vw; }
+
+.ui-slider-horizontal {
+  height: 30px !important;
+  background-color: #000; }
 
 .ui-slider-pip {
-    display:none;
-}
+  display: none; }
+
+.ui-slider-float .ui-slider-tip, .ui-slider-float .ui-slider-tip-label {
+  position: absolute;
+  visibility: hidden;
+  top: -40px;
+  display: block;
+  width: 34px;
+  margin-left: -18px;
+  left: 50%;
+  height: 20px;
+  line-height: 20px;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #888;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0;
+  color: #333;
+  -webkit-transition-property: opacity,top,visibility;
+  transition-property: opacity,top,visibility;
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  -webkit-transition-duration: 200ms,200ms,0ms;
+  transition-duration: 200ms,200ms,0ms;
+  -webkit-transition-delay: 0ms,0ms,200ms;
+  transition-delay: 0ms,0ms,200ms; }
+
+.ui-slider-float .ui-slider-handle.ui-state-active .ui-slider-tip, .ui-slider-float .ui-slider-handle.ui-state-focus .ui-slider-tip, .ui-slider-float .ui-slider-handle.ui-state-hover .ui-slider-tip, .ui-slider-float .ui-slider-handle:focus .ui-slider-tip, .ui-slider-float .ui-slider-handle:hover .ui-slider-tip, .ui-slider-float .ui-slider-pip:hover .ui-slider-tip-label {
+  opacity: 1;
+  top: -30px;
+  visibility: visible;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-delay: 200ms,200ms,0ms;
+  transition-delay: 200ms,200ms,0ms; }
+
+h1 {
+  margin: 0; }
