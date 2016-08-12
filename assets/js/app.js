@@ -1,7 +1,6 @@
     
 
 $('.add-row').click(function () {
-       
         var zoneSliderRow = $('.slider-row').html();
         var deleteButton = $('.remove');
         $('.content').append("<div class='slider-row'>" + zoneSliderRow + "</div>");
@@ -11,17 +10,25 @@ $('.add-row').click(function () {
     });
 
 
-
-$(function(){
-  setInterval(function(){
-    var divUtc = $('#divUTC');
-    var divLocal = $('#divLocal');  
-    //put UTC time into divUTC  
-    divUtc.text(moment.utc().format('YYYY-MM-DD HH:mm:ss'));      
+$("#example_id").ionRangeSlider({
+    min: +moment().subtract(12, "hours").format("X"),
+    max: +moment().format("X"),
     
-    //get text from divUTC and conver to local timezone  
-    var localTime  = moment.utc(divUtc.text()).toDate();
-    localTime = moment(localTime).format('HH:mm:ss');
-    divLocal.text(localTime);        
-  },1000);
+    grid: true,
+    force_edges: true,
+     prettify: function (num) {
+        return moment(num, "X").format("MMM Do, hh:mm A");
+    }
+    
 });
+
+
+var nut = moment("2013-11-18").tz("America/Toronto").format('Z'); 
+console.log(nut);
+
+
+
+
+
+
+

@@ -1,84 +1,48 @@
 <!DOCTYPE html>
 <html style="background: #F5F5F5">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>TimeDiff</title>
     <LINK REL=StyleSheet HREF="/assets/css/normalize.css" TYPE="text/css" MEDIA=screen>
     <LINK REL=StyleSheet HREF="/assets/css/main.css" TYPE="text/css" MEDIA=screen>
-     <LINK REL=StyleSheet HREF="/assets/css/ion.rangeSlider.skinModern.css" TYPE="text/css" MEDIA=screen>
+    <LINK REL=StyleSheet HREF="/assets/css/ion.rangeSlider.skinModern.css" TYPE="text/css" MEDIA=screen>
     <LINK REL=StyleSheet HREF="/assets/css/ion.rangeSlider.css" TYPE="text/css" MEDIA=screen>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    
-  
-    <script src="assets/js/jquery-ui-slider-pips.js"></script>
-     <script src="/assets/js/moment-with-locales.min.js"></script>
-     <script src="assets/js/ion.rangeSlider.js"></script>
+   
+    <script src="/assets/js/moment-with-locales.min.js"></script>
+     <script src="/assets/js/moment-timezone-with-data.min.js"></script>
+    <script src="assets/js/ion.rangeSlider.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
-  </head>
-  <body>
-   
-   <section class="content">
-    <h1 class="title">TimeDiff</h1>
-    
-  
-    <div class="slider-row"><select>
-  <option value="New York">New York</option>
-  <option value="Paris">Paris</option>
-  <option value="Bilbao">Bilbaos</option>
-  <option value="Tokyo">Tokyo</option>
-</select>
-   
- 
-<input type="text" id="example_id" name="example_name" value="" />
-<button class="remove">X</button>
-    </div>
+    <script src="/assets/js/timezones.full.js"></script>
+</head>
+
+<body>
+
+    <section class="content">
+        <h1 class="title">TimeDiff</h1>
+           <div class="slider-row">
+            <select class="form-control"></select>
+             <input type="text" id="example_id" name="example_name" value="" />
+            <button class="remove">X</button>
+        </div>
     </section>
- 
+    <button class="add-row">+</button>
 
-  
- <button class="add-row">+</button>
- 
-  </body>
+</body>
 
-  <!--<script>
+<!--<script>
     // You can also require other files to run in this process
     require('./renderer.js')
   </script>-->
-  <!--<script>
-       $(".slider")
-                        
-.slider({ 
-    min: 0, 
-    max: 1000, 
-    step:10 
-})
-                        
-.slider("pips", {
-    rest: "label",
-    step: 2
-})
-                        
-.slider("float");</script>
-  -->
 
-  <script src="assets/js/app.js"></script>
-  
-  <script>
-      
-     
-$("#example_id").ionRangeSlider({
-    min: +moment().subtract(12, "hours").format("X"),
-    max: +moment().format("X"),
-    from: +moment().subtract(6, "hours").format("X"),
-    grid: true,
-    force_edges: true,
-    prettify: function (num) {
-        var m = moment(num, "X").locale("LTS");
-        return m.format("Do MMMM, HH:mm");
-    }
-});
-      
-      </script>
+
+
+<script src="assets/js/app.js"></script>
+
+<script>
+    $('select').timezones();
+</script>
 
 </html>

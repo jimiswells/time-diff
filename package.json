@@ -26,6 +26,7 @@
     "electron-prebuilt": "^1.2.0"
   },
   "dependencies": {
-    "moment": "^2.14.1"
+    "moment": "^2.14.1",
+    "moment-timezone": "^0.5.5"
   }
 }

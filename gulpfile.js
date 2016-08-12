@@ -13,8 +13,10 @@ gulp.task('serve', ['sass'], function() {
     });
     
 
+
     gulp.watch("/Users/jimiswells/Desktop/WEB/time-diff/assets/scss/*.scss", ['sass']);
     gulp.watch("/Users/jimiswells/Desktop/WEB/time-diff/*.html").on('change', browserSync.reload);
+    gulp.watch("/Users/jimiswells/Desktop/WEB/time-diff/assets/js/*.js").on('change', browserSync.reload);
 });
 
 // Compile sass into CSS & auto-inject into browsers
