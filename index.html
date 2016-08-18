@@ -25,27 +25,37 @@
 
     <section class="content">
         <h1 class="title">TimeDiff</h1>
-           <div class="slider-row">
-            <select class="form-control"></select>
-             <input type="text" id="example_id" name="example_name" value="" />
+           <div class="slider-row" id="">
+            <select id="city-select0" onchange="change_city('0')" data-selectNo="0">
+                <option value="100">NewYork</option>
+                 <option value="999">china</option>
+            </select>
+                 <input type="text" id="default0" name="example_name" value="" />
+                 
             <button class="remove">X</button>
+            <div class="extra-controls">
+    <input type="text" maxlength="4" value="0" class="inp js-from" />
+    <input type="text" maxlength="4" value="1000" class="inp js-to" />
+</div>
         </div>
     </section>
     <button class="add-row">+</button>
+    
+    <div class="moment"></div>
 
 </body>
 
-<!--<script>
+<script>
     // You can also require other files to run in this process
-    require('./renderer.js')
-  </script>-->
+   // require('./renderer.js')
+  </script>
 
 
 
 <script src="assets/js/app.js"></script>
 
 <script>
-    $('select').timezones();
+   $('select').timezones();
 </script>
 
 </html>
