@@ -13,8 +13,7 @@ $('.add-row').click(function () {
     max: +moment().add(12, "hours").format("X"),
     from: +moment.utc().format("X"),
     prettify_enabled:true,
-    grid: true,
-    grid_num: 10,
+    hide_min_max:true,
     onChange: function (data) {
         from = data.from;
         to = data.to; 
@@ -53,6 +52,7 @@ $range.ionRangeSlider({
     type: "single",
     min: min,
     max: max,
+    range:100,
     from: +moment.utc().format("X"),
     prettify_enabled:true,
     grid: true,
@@ -130,9 +130,15 @@ $to.on("change", function () {
     console.log(timezone);
     }
 
+$('.gradient-ranger').on("change", function(){
+    var gradientChange = $(this).val() + '%';
+    
+    alert(gradientChange);
+    $('.irs-with-grid').css('background', 'linear-gradient(to right,  #d4e02c 0%,#2989d8 ' + gradientChange +' ,#207cca 51%,#ebf484 100%)');
+      });
+
     
 
- 
  
 
 

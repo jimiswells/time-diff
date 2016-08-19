@@ -43,15 +43,30 @@ h1.title {
 }
 
 .irs-with-grid {
-    height: 30px!important;
+    height: 50px!important;
     width:50vw;
     background-color: #fff;
+   
+background: #d4e02c; /* Old browsers */
+background: -moz-linear-gradient(left,  #d4e02c 0%, #2989d8 50%, #207cca 51%, #ebf484 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #d4e02c 0%,#2989d8 50%,#207cca 51%,#ebf484 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #d4e02c 0%,#2989d8 50%,#207cca 51%,#ebf484 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e02c', endColorstr='#ebf484',GradientType=1 ); /* IE6-9 */
+;
+}
+
+
+.gradient-ranger {
+    background-color:blue;
 }
 
 .irs-from, .irs-to, .irs-single {
     font-size:1em !important;
     top:-30px !important;
 }
+
+.irs-grid-text {
+display:none;}
 
 
 @import '_typography'
