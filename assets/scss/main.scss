@@ -30,9 +30,12 @@ h1.title {
     flex-direction:row;
     justify-content: space-between;
     align-items:center;
-    margin-bottom: 50px;
+    margin-bottom: 90px;
 }
 
+.visible {
+    display: none;
+}
 
 
 
@@ -67,6 +70,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e02c', end
 
 .irs-grid-text {
 display:none;}
+
+
+
+/////SELECT DROPDOWN
+
+
 
 
 @import '_typography'

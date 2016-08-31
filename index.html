@@ -8,14 +8,18 @@
     <LINK REL=StyleSheet HREF="assets/css/main.css" TYPE="text/css" MEDIA=screen>
     <LINK REL=StyleSheet HREF="assets/css/ion.rangeSlider.skinModern.css" TYPE="text/css" MEDIA=screen>
     <LINK REL=StyleSheet HREF="assets/css/ion.rangeSlider.css" TYPE="text/css" MEDIA=screen>
+     <LINK REL=StyleSheet HREF="assets/css/select2.min.css" TYPE="text/css" MEDIA=screen>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="assets/js/timezones.full.js"></script>
    
     <script src="assets/js/moment-with-locales.min.js"></script>
      <script src="assets/js/moment-timezone-with-data.min.js"></script>
     <script src="assets/js/ion.rangeSlider.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
     <script src="assets/js/timezones.full.js"></script>
+        <script src="assets/js/select2.full.min.js"></script>
+  
 </head>
 
 <body>
@@ -25,25 +29,36 @@
 
     <section class="content">
         <h1 class="title">TimeDiff</h1>
-           <div class="slider-row" id="">
-            <select id="city-select0" onchange="change_city('0')" data-selectNo="0">
-                <option value="100">NewYork</option>
-                 <option value="999">china</option>
-            </select>
-                 <input type="text" id="default0" name="example_name" value="" />
+           <div class="slider-row row-1" id="">
+            <select id="city-select1" onchange="change_city('1')" >
+               </select>
+                 <input type="text" id="default1" name="example_name" value="" />
                  
-            <button class="remove">X</button>
+            <button class="remove remove1">X</button>
            
         </div>
+         <div class="slider-row row-2" id="">
+            <select id="city-select2" onchange="change_city('2')">
+               
+            </select>
+                 <input type="text" id="default2" name="example_name" value="" />
+                 
+            <button class="remove remove2">X</button>
+           
+        </div>
+      <button class="add-row">+</button>
     </section>
-    <button class="add-row">+</button>
+  
     
     <div class="extra-controls">
-    <input type="text" maxlength="4" value="0" class="inp js-from" />
-    <input type="text" maxlength="4" value="1000" class="inp js-to" />
+    <input type="text" maxlength="4" value="0" class="inp js-from1" />
+    <input type="text" maxlength="4" value="1000" class="inp js-to1" />
+      <input type="text" maxlength="4" value="0" class="inp js-from2" />
+    <input type="text" maxlength="4" value="1000" class="inp js-to2" />
 </div>
 
-<input type="text" maxlength="4" value="0" class="gradient-ranger" />
+<input type="text" maxlength="4" value="0" class="gradient-ranger" id="gradient-ranger" />
+
 
 </body>
 
@@ -56,8 +71,14 @@
 
 <script src="assets/js/app.js"></script>
 
-<script>
-   $('select').timezones();
+
+
+       <script type="text/javascript">
+  $(document).ready(function() {
+  $("#city-select1, #city-select2").timezones().select2();
+});
+  </script>
 </script>
+
 
 </html>
