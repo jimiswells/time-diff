@@ -13,10 +13,13 @@ var currentZone = moment();
 
 var $range1 = $("#default1"),
     $range2 = $("#default2"),
+    $range3 = $("#default3"),
     $from = $(".js-from1"),
     $to = $(".js-to1"),
     $from2 = $(".js-from2"),
     $to2 = $(".js-to2"),
+      $from3 = $(".js-from3"),
+    $to3 = $(".js-to3"),
     range,
     min = +moment().subtract(12, "hours").format("X"),
     max = +moment().add(12, "hours").format("X"),
@@ -29,6 +32,7 @@ var updateValues = function () {
     //Get timezone offset of each slider
     var Tz1 = parseFloat($('#city-select1').find(':selected').data('offset'));
     var Tz2 = parseFloat($('#city-select2').find(':selected').data('offset'));
+    var Tz2 = parseFloat($('#city-select3').find(':selected').data('offset'));
     
     //This changes second slider
     $from2.prop("value", from + (Tz2-Tz1)*3600  );
@@ -37,6 +41,20 @@ var updateValues = function () {
 };
     
 var updateValues2 = function () {
+    $from2.prop("value", from);
+    $to2.prop("value", to);
+    
+    //Get timezone offset of each slider
+    //var Tz1 = parseFloat($('#city-select1').find(':selected').data('offset'));
+    //var Tz2 = parseFloat($('#city-select2').find(':selected').data('offset'));
+    
+    //This changes second slider
+    //$from.prop("value", from + (Tz1-Tz2)*3600  );
+    //$(".js-from1").trigger("change");
+    
+};
+    
+    var updateValues3 = function () {
     $from2.prop("value", from);
     $to2.prop("value", to);
     
@@ -94,6 +112,7 @@ $range2.ionRangeSlider({
     
 range1 = $range1.data("ionRangeSlider");
 range2 = $range2.data("ionRangeSlider");
+range3 = $range3.data("ionRangeSlider");
     
 var updateRange = function () {
     range1.update({
@@ -105,6 +124,8 @@ var updateRange = function () {
     //Get timezone offset of each slider
     var Tz1 = parseFloat($('#city-select1').find(':selected').data('offset'));
     var Tz2 = parseFloat($('#city-select2').find(':selected').data('offset'));
+    var Tz3 = parseFloat($('#city-select3').find(':selected').data('offset'));
+    
     
     //This changes second slider
     range2.update({
@@ -119,6 +140,25 @@ var updateRange = function () {
 
 var updateRange2 = function () {
     range2.update({
+        from: from,
+        to: to
+    });
+    
+    //Get timezone offset of each slider
+    //var Tz1 = parseFloat($('#city-select1').find(':selected').data('offset'));
+    //var Tz2 = parseFloat($('#city-select2').find(':selected').data('offset'));
+    
+    //This changes second slider
+    /*
+    range1.update({
+        from: from + (Tz1-Tz2)*3600 ,
+        to: to
+    });
+    */
+};
+    
+var updateRange3 = function () {
+    range3.update({
         from: from,
         to: to
     });
@@ -183,7 +223,31 @@ $to2.on("change", function () {
     }
     updateValues2();    
     updateRange2();
-});    
+}); 
+    
+$from3.on("change", function () {
+    from = +$(this).prop("value");
+    if (from < min) {
+        from = min;
+    }
+    if (from > to) {
+        from = to;
+    }
+    updateValues2();    
+    updateRange2();
+});
+
+$to3.on("change", function () {
+    to = +$(this).prop("value");
+    if (to > max) {
+        to = max;
+    }
+    if (to < from) {
+        to = from;
+    }
+    updateValues2();    
+    updateRange2();
+});
     
     
 
