@@ -1,5 +1,7 @@
 Hacking around with `/electron/electron-quick-start`.
 
+Add/remove timezones and check times in each
+
 # Quick start
 
 ```bash
